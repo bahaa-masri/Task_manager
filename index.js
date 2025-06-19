@@ -16,15 +16,16 @@ const PORT = process.env.PORT || 5000
 const app = express()
 
 app.use(
-    cors({
-        origin: [
-            //"https://task-manager-abhi.netlify.app",
-            "http://38.172.157.9:3000",
-            "http://localhost:3000",
-            "http://localhost:3001"],
-        methods: ["GET", "POST", "DELETE", "PUT"],
-        credentials: true,
-    })
+    // cors({
+    //     origin: [
+    //         //"https://task-manager-abhi.netlify.app",
+    //         "http://38.172.157.9:3000",
+    //         "http://localhost:3000",
+    //         "http://localhost:3001"],
+    //     methods: ["GET", "POST", "DELETE", "PUT"],
+    //     credentials: true,
+    // })
+    cors()
 )
 
 app.use(express.json())

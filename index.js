@@ -25,7 +25,12 @@ app.use(
     //     methods: ["GET", "POST", "DELETE", "PUT"],
     //     credentials: true,
     // })
-    cors()
+    cors({
+        origin: (origin, callback) => {
+          callback(null, true);
+        },
+        credentials: true,
+      })
 )
 
 app.use(express.json())

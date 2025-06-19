@@ -19,6 +19,7 @@ app.use(
     cors({
         origin: [
             //"https://task-manager-abhi.netlify.app",
+            "http://38.172.157.9:3000",
             "http://localhost:3000",
             "http://localhost:3001"],
         methods: ["GET", "POST", "DELETE", "PUT"],

@@ -16,40 +16,35 @@ const PORT = process.env.PORT || 5000
 const app = express()
 
 // app.use(
-//     // cors({
-//     //     origin: [
-//     //         //"https://task-manager-abhi.netlify.app",
-//     //         "http://38.172.157.9:3000",
-//     //         "http://localhost:3000",
-//     //         "http://localhost:3001"],
-//     //     methods: ["GET", "POST", "DELETE", "PUT"],
-//     //     credentials: true,
-//     // })
 //     cors({
-//         origin: (origin, callback) => {
-//           callback(null, true);
-//         },
+//         origin: [
+//             //"https://task-manager-abhi.netlify.app",
+//             "http://38.172.157.9:3000",
+//             "http://localhost:3000",
+//             "http://localhost:3001"],
+//         methods: ["GET", "POST", "DELETE", "PUT"],
 //         credentials: true,
-//       })
+//     })
 // )
 
-// const allowedOrigins = [
-//     "http://localhost:3000",
-//     "http://38.172.157.9:3000", // IP جهازك أو اسم الشبكة
-//   ];
+const allowedOrigins = [
+    "https://bahaatm.netlify.app:3000",
+    "http://localhost:3000",
+    "http://38.172.157.9:3000", // IP جهازك أو اسم الشبكة
+  ];
   
-//   
-//     origin: function (origin, callback) {
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//     credentials: true,
-//   }));
+  app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  }));
   
-app.use(cors())
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

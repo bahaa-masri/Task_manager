@@ -28,7 +28,7 @@ const app = express()
 // )
 
 const allowedOrigins = [
-    "https://bahaatm.netlify.app:3000",
+    "https://bahaatm.netlify.app",
     "http://localhost:3000",
     "http://38.172.157.9:3000", // IP جهازك أو اسم الشبكة
   ];
